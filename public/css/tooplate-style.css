@@ -261,13 +261,10 @@ figure.effect-sadie:hover p {
 .tm-tag-line {
     margin-bottom: 60px;
     position: relative;
-    min-height: 285px;
+    min-height: 255px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(../img/insertion-1800x450.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .tm-tag-line-title {

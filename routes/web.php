@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\QuranController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // home page web
-Route::get('/', function () {
-    return view('homepage');
-});
+Route::get('/', [HomepageController::class, 'index']);
+
+// redirect to detail quran 
+Route::get('/quran/surah', [QuranController::class, 'index'])->name('surah');

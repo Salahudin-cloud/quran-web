@@ -82,11 +82,39 @@
             </div>
             <div class="row mt-3">
                 <div class="col">
+
                     @foreach ($surah['ayahs'] as $key => $data)
                         <div class="card custom-card {{ $key % 2 == 0 ? 'black-card' : 'white-card' }}">
                             <div class="card-body">
-                                <h4 class="font-weight-bold">{{ $data['number']['inSurah'] }}.</h4>
-                                <h1 class="card-title text-right">{{ $data['arab'] }}</h1>
+                                <h4 class="font-weight-bold">{{ $data['number']['inSurah'] }}</h4>
+                                <h1 class="card-title text-right">
+                                    <button type="button" class="btn btn-sm border border-dark mr-3"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#exampleModalScrollable{{ $key }}">
+                                        Tafsir
+                                    </button>
+                                    {{ $data['arab'] }}
+                                </h1>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModalScrollable{{ $key }}" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Tafsir Ayat Ke
+                                                    {{ $data['number']['inSurah'] }}</h5>
+
+                                            </div>
+                                            <div class="modal-body">
+                                                {{ $data['tafsir']['kemenag']['short'] }}
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Tutup</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <p class="card-text">
                                     {{ $data['translation'] }}
                                 </p>
@@ -99,14 +127,26 @@
 
         {{-- end body --}}
 
-        <!-- Pagination links -->
-
         {{-- footer --}}
         @include('templates.footer')
     </div>
 
+
+
+
     {{-- load js  --}}
     @include('imports.js')
+    <script>
+        $(document).ready(function() {
+            // No need to manually trigger modal, Bootstrap handles it
+
+            // Optional: you can remove this click event handler
+            $('button[data-bs-toggle="modal"]').click(function() {
+                var targetModalId = $(this).attr('data-bs-target');
+                $(targetModalId).modal('show');
+            });
+        });
+    </script>
 </body>
 
 </html>

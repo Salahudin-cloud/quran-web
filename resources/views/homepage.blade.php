@@ -41,7 +41,7 @@
 
         <!-- Pagination links -->
         <div class="d-flex justify-content-center mt-4">
-            {{ $quran->links('vendor.pagination.bootstrap-4') }}
+            {{ $quran->links('vendor.pagination.bootstrap-5') }}
         </div>
         {{-- footer --}}
         @include('templates.footer')

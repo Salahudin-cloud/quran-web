@@ -5,7 +5,7 @@
                     <nav class="navbar navbar-expand-sm">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a href="index.html" class="nav-link tm-nav-link tm-text-white active">Home</a>
+                                <a href="{{ url('/') }}" class="nav-link tm-nav-link tm-text-white active">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a href="about.html" class="nav-link tm-nav-link tm-text-white">About</a>

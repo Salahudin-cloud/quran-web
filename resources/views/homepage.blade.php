@@ -45,6 +45,7 @@
         </div>
         {{-- footer --}}
         @include('templates.footer')
+
     </div>
 
 
@@ -52,6 +53,7 @@
 
     {{-- load js  --}}
     @include('imports.js')
+
 </body>
 
 </html>

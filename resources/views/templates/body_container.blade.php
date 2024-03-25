@@ -1,8 +1,8 @@
 <div class="container">
     <div class="tm-search-form-container align-middle">
-        <form action="index.html" method="GET" class="form-inline tm-search-form">
+        <form action="{{ url('/cari/surah/') }}" method="GET" class="form-inline tm-search-form">
             <div class="form-group tm-search-box">
-                <input type="text" name="keyword" class="form-control tm-search-input"
+                <input type="text" name="ke" class="form-control tm-search-input"
                     placeholder="Cari Nomor Surat ...">
                 <input type="submit" value="cari" class="form-control tm-search-submit">
             </div>

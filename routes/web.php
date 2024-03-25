@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\QuranController;
+use App\Http\Controllers\CariSurahController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,6 @@ Route::get('/', [HomepageController::class, 'index']);
 
 // redirect to detail quran 
 Route::get('/quran/surah', [QuranController::class, 'index'])->name('surah');
+
+// cari nomor surha 
+Route::get('/cari/surah/', [CariSurahController::class, 'index'])->name('cari');

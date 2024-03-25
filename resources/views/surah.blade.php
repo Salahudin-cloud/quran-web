@@ -103,7 +103,6 @@
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="exampleModalLabel">Tafsir Ayat Ke
                                                     {{ $data['number']['inSurah'] }}</h5>
-
                                             </div>
                                             <div class="modal-body">
                                                 {{ $data['tafsir']['kemenag']['short'] }}

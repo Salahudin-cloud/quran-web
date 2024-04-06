@@ -10,4 +10,4 @@ Welcome to the Ramadan 2024 project, a groundbreaking endeavor marking my maiden
 3. Run `composer install` on your cmd or terminal
 4. Run `php artisan key:generate` on your folder application from your terminal
 5. Run `php artisan serve` on your folder application from your terminal
-6. Go to `http://localhost:8000/`
+6. Go to `http://127.0.0.1:8000/`

@@ -4,3 +4,10 @@ Welcome to the Ramadan 2024 project, a groundbreaking endeavor marking my maiden
 - laravel [v10.47.0](https://laravel.com/)
 - Al Quran API from [here](https://github.com/renomureza/quran-api-id)
 - Template UI From [here](https://themewagon.com/themes/insertion-free-html5-bootstrap-4-musical-portfolio-website-template/)
+## How To Install 
+1. Clone this project
+2. Go to the folder application using `cd` command on your cmd or terminal
+3. Run `composer install` on your cmd or terminal
+4. Run `php artisan key:generate` on your folder application from your terminal
+5. Run `php artisan serve` on your folder application from your terminal
+6. Go to `http://localhost:8000/`

@@ -66,15 +66,15 @@
                     <a href="{{ url()->previous() }}" class="btn form-inline tm-search-submit">
                         <i class="fas fa-arrow-left"></i>
                     </a>
-                    <h2 class="my-title">{{ $surah['name'] }}</h2>
+                    <h2 class="my-title">{{ $quran['name'] }}</h2>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col">
                     <h3>Penjelasan</h3>
-                    <p class="text-justify">{{ $surah['description'] }}</p>
+                    <p class="text-justify">{{ $quran['description'] }}</p>
                     <audio controls>
-                        <source src="{{ $surah['audio'] }}" type="audio/mpeg">
+                        <source src="{{ $quran['audio'] }}" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
 
@@ -83,7 +83,7 @@
             <div class="row mt-3">
                 <div class="col">
 
-                    @foreach ($surah['ayahs'] as $key => $data)
+                    @foreach ($surah as $key => $data)
                         <div class="card custom-card {{ $key % 2 == 0 ? 'black-card' : 'white-card' }}">
                             <div class="card-body">
                                 <h4 class="font-weight-bold">{{ $data['number']['inSurah'] }}</h4>
@@ -125,7 +125,10 @@
         </div> <!-- .container -->
 
         {{-- end body --}}
-
+        <!-- Pagination links -->
+        <div class="d-flex justify-content-center mt-4">
+            {{ $surah->appends(['no' => $quran['number'], 'page' => $surah->currentPage()])->links('vendor.pagination.bootstrap-5') }}
+        </div>
         {{-- footer --}}
         @include('templates.footer')
     </div>
